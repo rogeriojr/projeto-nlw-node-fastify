@@ -1,0 +1,8 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+  "title": "Projeto Node com Fastfy",
+  "details": "Projeto de estudo para desenvolvimento pessoal",
+  "maximumAttendees": 1
+}
