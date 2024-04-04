@@ -6,3 +6,12 @@ Content-Type: application/json
   "details": "Projeto de estudo para desenvolvimento pessoal",
   "maximumAttendees": 1
 }
+
+###
+POST http://localhost:3333/events/671bf19f-0491-4973-ad53-560d05c06e81/attendees
+Content-Type: application/json
+
+{
+  "name": "Rogério",
+  "email": "rogeriojr1100@gmail.com"
+}
