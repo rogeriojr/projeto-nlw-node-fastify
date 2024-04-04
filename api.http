@@ -22,3 +22,7 @@ Content-Type: application/json
 ###
 GET http://localhost:3333/attendees/1/badge
 Content-Type: application/json
+
+###
+
+GET http://localhost:3333/attendees/4/check-in

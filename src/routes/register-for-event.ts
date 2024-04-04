@@ -4,7 +4,7 @@ import { z } from "zod";
 import { prisma } from "../lib/prisma";
 import { BadRequest } from "./_errors/bad-request";
 
-export async function RegisterForEvent(app: FastifyInstance) {
+export async function registerForEvent(app: FastifyInstance) {
   app
     .withTypeProvider<ZodTypeProvider>()
     .post('/events/:eventId/attendees', {
