@@ -9,7 +9,7 @@ export async function getAttendeeBadge(app: FastifyInstance) {
     .withTypeProvider<ZodTypeProvider>()
     .get('/attendees/:attendeeId/badge', {
       schema: {
-        summary: 'Get an attendee badge',
+        summary: 'Listar Credencial do Participante',
         tags: ['attendees'],
         params: z.object({
           attendeeId: z.coerce.number().int(),
@@ -44,7 +44,7 @@ export async function getAttendeeBadge(app: FastifyInstance) {
       })
 
       if (attendee === null) {
-        throw new BadRequest('Attendee not found.')
+        throw new BadRequest('Participante não encontrado!.')
       }
 
       const baseURL = `${request.protocol}://${request.hostname}`
