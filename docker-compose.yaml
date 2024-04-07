@@ -11,6 +11,8 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=credentialin
+    volumes:
+      - 'db:/var/lib/posgresql/data'
 
   api-credential-in:
     build:
@@ -30,3 +32,5 @@ services:
 networks:
  credentialin:
   driver: bridge
+volumes:
+ db:
