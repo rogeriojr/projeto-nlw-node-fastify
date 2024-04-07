@@ -2,6 +2,16 @@ version: '3.7'
 
 services:
 
+  postgres:
+    image: postgres:16.2-alpine3.19
+    container_name: db-credential-in
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=credentialin
+
   api-credential-in:
     build:
       context: .
@@ -9,4 +19,14 @@ services:
     ports:
       - 3001:3333
     environment:
-      - DATABASE_URL="file:./dev.db"
+      - DATABASE_URL=postgresql://admin:admin@postgres:5432/credentialin
+    # Versão sem postgres
+      # - DATABASE_URL="file:./dev.db"
+    depends_on:
+      - postgres
+    networks:
+      - credentialin
+
+networks:
+ credentialin:
+  driver: bridge
