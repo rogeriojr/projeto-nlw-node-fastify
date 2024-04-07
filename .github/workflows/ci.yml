@@ -17,10 +17,9 @@ jobs:
       uses: actions/checkout@v4
       # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Generate sha
-
       id: generate_sha
       run: |
-        SHA=$(echo ${GITHUB_SHA | head -c7})
+        SHA=$(echo $GITHUB_SHA | head -c7)
         echo "sha=$SHA" >> $GITHUB_OUTPUT
     - name: Build docker image
       run: |
