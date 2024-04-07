@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+
+  api-credential-in:
+    build:
+      context: .
+    container_name: api-credential-in
+    ports:
+      - 3001:3333
+    environment:
+      - DATABASE_URL="file:./dev.db"
