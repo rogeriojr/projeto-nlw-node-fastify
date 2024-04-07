@@ -22,4 +22,5 @@ jobs:
         SHA=$(echo $GITHUB_SHA | head -c7)
         echo "sha=$SHA" >> $GITHUB_OUTPUT
     - name: Build docker image
-      run: "docker build -t rogeriojr/projeto-nlw-node-fastify:latest \n"
+      run: |
+        docker build -t rogeriojr/projeto-nlw-node-fastify:${{ steps.generate_sha.outputs.sha }} .
